@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd" >
+
+	<!-- springMVC配置 -->
+	<!-- 1. 配置注解驱动 -->
+	<mvc:annotation-driven />
+	<!-- 2. 视图解析器（jsp）路径：/WEB-INF/jsp/ -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!-- 3. 配置包扫描器，扫描@Controller注解的类 -->
+	<context:component-scan base-package="com.taotao.controller"/>
+	<!-- 在web.xml 配置前端控制器 -->
+	<!-- 配置资源映射 location:路径，mapping:映射，url路径包含的一段，**是可以多级寻找-->
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	
+	
+	<!-- 调用Dubbo服务，实现系统之间的调用，只能两个相同语言的才可以使用，
+		socket
+		类似于restful(跨平台)
+		类似于Webservice(跨平台),使用wsdl(网络服务描述语言)调用接口 -->
+	<dubbo:application name="taotao-manager-web"/>
+	<dubbo:registry protocol="zookeeper" address="192.168.147.129:2181"/>
+	<!-- 增加引用调用远程服务配置，创建服务代理对象 -->
+	<dubbo:reference interface="com.taotao.service.ItemService" id="itemService" />
+</beans>      

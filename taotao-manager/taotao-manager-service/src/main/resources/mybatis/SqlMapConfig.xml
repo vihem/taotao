@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- dao层 mybatis 与 spring 整合 -->
+	<!-- 配置分页插件 -->
+	<plugins>
+		<!-- interceptor拦截器。
+			在执行查询之前拦截sql语句，
+			拼接limit，实现分页。
+			首先需要在查询之前设置分页信息。。
+		 -->
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<!-- 配置数据库的方言 -->
+			<!-- 设置数据库类型 Oracle,Mysql,MariaDB,SQLite,Hsqldb,PostgreSQL六种数据库   -->      
+        	<property name="dialect" value="mysql"/>
+		</plugin>
+	</plugins>
+</configuration>
