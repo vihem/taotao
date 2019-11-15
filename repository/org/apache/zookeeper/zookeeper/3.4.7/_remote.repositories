@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Oct 30 21:26:13 CST 2019
+zookeeper-3.4.7-sources.jar>alimaven=
+zookeeper-3.4.7.jar>central=
+zookeeper-3.4.7.pom>central=

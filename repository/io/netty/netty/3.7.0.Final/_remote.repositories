@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Oct 30 21:26:17 CST 2019
+netty-3.7.0.Final-sources.jar>alimaven=
+netty-3.7.0.Final.jar>central=
+netty-3.7.0.Final.pom>central=

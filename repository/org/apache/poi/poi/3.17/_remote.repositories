@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Oct 30 19:15:52 CST 2019
+poi-3.17.jar>central=
+poi-3.17.pom>central=
+poi-3.17-sources.jar>alimaven=

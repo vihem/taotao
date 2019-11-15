@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Oct 15 00:04:04 CST 2019
+aspectjweaver-1.8.7.jar>central=
+aspectjweaver-1.8.7-sources.jar>central=
+aspectjweaver-1.8.7.pom>central=

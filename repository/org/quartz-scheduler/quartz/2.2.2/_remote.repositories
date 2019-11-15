@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Oct 14 22:13:33 CST 2019
+quartz-2.2.2-sources.jar>central=
+quartz-2.2.2.jar>central=
+quartz-2.2.2.pom>central=
